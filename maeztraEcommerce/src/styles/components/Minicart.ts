@@ -22,6 +22,11 @@ export const Container = styled.div`
     }
 
     div.ecn-lightbox-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
         height: 100%;
         background: ${colors.main_white};
         padding: 0;
@@ -34,6 +39,7 @@ export const Container = styled.div`
             display: flex;
             align-items: center;
             justify-content: space-between;
+            width: 100%;
             padding: 10px 15px;
 
             span {
@@ -75,6 +81,129 @@ export const Container = styled.div`
                     font-weight: 400;
                     letter-spacing: .45px;
                     text-transform: uppercase;
+                }
+            }
+        }
+
+        div.main {
+            flex: 1;
+            padding: 10px 15px;
+
+            div.content-products {
+                overflow-y: scroll;
+            }
+        }
+
+        div.footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 15px;
+
+            section {
+                width: 100%;
+
+                &.calculation-area {
+                    
+                    margin-bottom: 15px;
+
+                    div {
+                        &.sub-total ,
+                        &.total,
+                        &.shipping-area {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+
+                            span {
+                                font-family: ${fonts.font_1};
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 21px;
+                                color: ${colors.sub_grey};
+                                text-transform: uppercase;
+                            }
+
+                            strong {
+                                font-family: ${fonts.font_1};
+                                font-size: 14px;
+                                line-height: 21px;
+                            }
+                        }
+
+                        &.sub-total,
+                        &.shipping-area {
+                            margin-bottom: 10px;
+                        }
+
+                        &.shipping-area {
+                            form {
+                                fieldset {
+                                    display: flex;
+
+                                    input {
+                                        border: 1px solid ${colors.sub_grey_4};
+                                        width: 125px;
+                                        color: ${colors.main_black};
+                                        font-family: ${fonts.font_1};
+                                        font-size: 12px;
+                                        font-weight: 500;
+                                        letter-spacing: 2.04px;
+                                        padding: 0 10px;
+                                    }
+
+                                    button {
+                                        font-family: ${fonts.font_1};
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 14px;
+                                        line-height: 21px;
+                                        color: ${colors.main_white};
+                                        background-color: ${colors.main_yellow};
+                                        padding: 0 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.button-area {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    button {
+                        flex: 1;
+                        height: 40px;
+
+                        &.checkout,
+                        &.more {
+                            font-family: ${fonts.font_1};
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 12px;
+                            line-height: 21px;
+                            text-transform: uppercase;
+                        }
+
+                        &.more {
+                            margin-right: 5px;
+                            color: ${colors.main_black};
+                            border: 1px solid ${colors.main_black};
+                            background-color: ${colors.main_white};
+                        }
+
+                        &.checkout {
+                            margin-left: 5px; 
+                            color: ${colors.main_white};
+                            background-color: ${colors.main_yellow};
+                        }
+                    }
                 }
             }
         }

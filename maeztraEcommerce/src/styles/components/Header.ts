@@ -1,11 +1,18 @@
-import { fonts } from './../themes/fonts';
 import styled from "styled-components";
-import { colors } from "../themes";
+import { colors, fonts } from "../themes";
 
-export const Container = styled.header`
+type HeaderProps = {
+    move: boolean;
+}
+
+type MenuProps = {
+    active: boolean;
+}
+
+export const Container = styled.header<HeaderProps>`
     display: flex;
     position: fixed;
-    top: 24px;
+    top: ${(props)=> props.move ? '0px' : '24px'};
     left: 0;
     right: 0;
     align-items: center;
@@ -139,6 +146,7 @@ export const FistLine = styled.div`
             display: flex;
             width: 32px;
             height: 32px;
+            font-size: 0px;
 
             img {
                 height: 100%;
@@ -148,10 +156,84 @@ export const FistLine = styled.div`
             &.search-button {
                 margin-right: 15px;
             }
+
+            &.account-button,
+            &.Wishlist-button {
+                display: none;
+            }
         }
     }
 `;
 
-export const SecondLine = styled.div`
+export const SecondLine = styled.div<MenuProps>`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: ${colors.main_white};
 
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: ${props=> props.active ? '0px' : '-100vw'};
+    width: 100%;
+    height: 100%;
+    opacity: ${props=> props.active ? 1 : 0};
+    visibility: ${props=> props.active ? 'visible' : 'hidden'};
+    z-index: 5002;
+    transition: all .2s ease-in-out;
+
+    div {
+        &.header-menu {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            height: 50px;
+            padding: 5px 15px;
+
+            span.close-btn {
+                font-family: ${fonts.font_1};
+                font-style: normal;
+                font-weight: 700;
+                font-size: 22px;
+                line-height: 24px;
+                color: ${colors.sub_grey};
+            }
+        }
+
+        &.footer-menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 55px;
+            border-top: 1px solid ${colors.sub_grey};
+
+            a {
+                border-right: 1px solid ${colors.sub_grey};
+            }
+
+            span,
+            a {
+                display: flex;
+                flex: 1;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+
+                font-family: ${fonts.font_1};
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 21px;
+                color: ${colors.sub_grey};
+
+                img {
+                    margin-right: 15px;
+                }
+            }
+
+        }
+    }
 `;
