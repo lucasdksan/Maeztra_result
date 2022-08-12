@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PopNews from "../components/PopNews";
 import ContainerItems from "../components/ContainerItems";
+import CardItem from "../components/CardItem";
 
 import { arryPartnerBrands } from "../data/partnerBrands";
 import { arryCardItems } from "../data/cardItems";
@@ -15,24 +16,29 @@ const Home = ()=>{
         <>
             <Header />
             <Component.Container>
-                <ContainerItems title="Por que comprar na Maeztra?" fontSize={23}>
+                <ContainerItems 
+                    title="Por que comprar na Maeztra?" 
+                    fontSize={16}
+                >
                     <div className="container">
                         {
                             arryCardItems.map((element, key)=>{
                                 return (
-                                    <div className="card-element" key={key}>
-                                        <img src={element.path} alt="Icon element Card" />
-                                        <div className="card-description">
-                                            <span>{element.title}</span>
-                                            <span>{element.description}</span>
-                                        </div>
-                                    </div>
+                                    <CardItem 
+                                        title={element.title} 
+                                        path={element.path} 
+                                        description={element.description} 
+                                        key={key}
+                                    />
                                 );
                             })
                         }
                     </div>
                 </ContainerItems>
-                <ContainerItems title="Marcas Parceiras" fontSize={23}>
+                <ContainerItems 
+                    title="Marcas Parceiras" 
+                    fontSize={24}
+                >
                     <div className="container">
                         {
                             arryPartnerBrands.map((element, key)=>{

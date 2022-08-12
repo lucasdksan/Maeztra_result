@@ -9,8 +9,8 @@ type ContainerItemsProps = {
 
 const ContainerItems = ({ title, children, fontSize }: ContainerItemsProps)=>{
     return(
-        <Component.Container>
-            <span>{title}</span>
+        <Component.Container font={fontSize}>
+            <span className="first-title">{title}</span>
             {children}
         </Component.Container>
     );

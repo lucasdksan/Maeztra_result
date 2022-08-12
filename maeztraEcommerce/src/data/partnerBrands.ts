@@ -3,25 +3,31 @@ export interface PartnerBrandsProps {
     name: string;
 }
 
+import commaImg from "../assets/main/comma.png";
+import melissaImg from "../assets/main/melissa.png.png";
+import foreverImg from "../assets/main/forever.png";
+import zaraImg from "../assets/main/zara.png";
+import taylorImg from "../assets/main/taylor.png";
+
 export const arryPartnerBrands = [
     {
-        path: "../assets/main/comma.png",
+        path: commaImg,
         name: "comma,"
     },
     {
-        path: "../assets/main/melissa.png.png",
+        path: melissaImg,
         name: "melissa"
     },
     {
-        path: "../assets/main/forever.png",
+        path: foreverImg,
         name: "forever_21"
     },
     {
-        path: "../assets/main/zara.png",
+        path: zaraImg,
         name: "zara"
     },
     {
-        path: "../assets/main/taylor.png",
+        path: taylorImg,
         name: "ann taylor"
     }
 ];
