@@ -10,6 +10,7 @@ export const Container = styled.section<Props>`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 40px;
 
     span.first-title {
         font-family: ${fonts.font_1};
@@ -23,7 +24,8 @@ export const Container = styled.section<Props>`
 
     div {
         &.container {
-            overflow-x: scroll;
+            display: flex;
+            align-items: center;
             width: 100%;
 
             &::-webkit-scrollbar{
@@ -37,9 +39,10 @@ export const Container = styled.section<Props>`
             div {
                 &.card-element {
                     display: flex;
-                    margin-right: 16px;
-                    width: 290px;
+                    width: 100%;
+                    max-width: 300px;
                     padding: 16px 26px;
+                    margin: 0 10px;
                     background-color: ${colors.sub_grey_5};
 
                     .card-description {
@@ -70,10 +73,15 @@ export const Container = styled.section<Props>`
                 }
 
                 &.element {
-                    width: 290px;
+                    width: 100%;
+                    max-width: 300px;
+                    height: auto;
+                    margin: 0 10px;
 
                     img {
-                        width: auto;
+                        width: 100%;
+                        height: auto;
+                        object-fit: contain;
                     }
                 }
             }

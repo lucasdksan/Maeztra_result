@@ -7,6 +7,14 @@ type MinicartPros = {
 }
 
 const Minicart = ({ action, handlerMinicart }: MinicartPros)=>{
+    function handleMoreBuy(){
+        
+    }
+
+    function handleConfirmed(){
+        window.location.href = "/checkout"
+    }
+
     return(
         <Component.Container className={action ? 'active' : ''}>
             <div className="ecn-lightbox-content">
@@ -45,7 +53,10 @@ const Minicart = ({ action, handlerMinicart }: MinicartPros)=>{
                     </section>
                     <section className="button-area">
                         <button className="more">Voltar a comprar</button>
-                        <button className="checkout">Finalizar compra</button>
+                        <button 
+                            onClick={handleConfirmed} 
+                            className="checkout"
+                        >Finalizar compra</button>
                     </section>
                 </div>
             </div>

@@ -55,7 +55,9 @@ const Header = ()=>{
             <Component.Container
                 move={windowMove}
             >
-                <Component.FistLine>
+                <Component.FistLine
+                    move={windowMove}
+                >
                     <div className="left-area">
                         <span onClick={handlerOpenMenu}>
                             <img src={menuMobileIcon} alt="Menu Burger Icon" />

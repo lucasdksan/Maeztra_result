@@ -20,6 +20,7 @@ export const Container = styled.div`
         display: flex;
         opacity: 1;
         visibility: visible;
+        z-index: 1000;
     }
 
     section {

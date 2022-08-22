@@ -2,12 +2,38 @@ import styled from "styled-components";
 import { colors, fonts } from "../themes";
 
 export const Container = styled.main`
-    padding: 0px 30px 40px 30px;
-    margin-top: 112px;
+    /* margin: 0 auto; */
+    /* max-width: 300px; */
+    margin-top: 88px;
 
     section {
+        &.shelf-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 23px;
+
+            .vitrine {
+                display: flex;
+                align-items: center;
+                width: 100%;
+            }
+
+            h3 {
+                font-family: ${fonts.font_1};
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 37px;
+                margin-bottom: 20px;
+                color: ${colors.sub_grey};
+            }
+        }
+
         &.last-banner {
             width: 100%;
+            padding: 0 30px;
 
             div {
                 &.content {

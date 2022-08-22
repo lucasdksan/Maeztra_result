@@ -21,9 +21,10 @@ export const Container = styled.header<HeaderProps>`
     height: 88px;
     background-color: ${colors.main_white};
     padding: 0px 16px;
+    z-index: 1000;
 `;
 
-export const FistLine = styled.div`
+export const FistLine = styled.div<HeaderProps>`
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -75,7 +76,7 @@ export const FistLine = styled.div`
 
             &.active {
                 opacity: 1;
-                top: 112px;
+                top: ${(props)=> props.move ? '88px' : '112px'};
                 left: 0;
                 visibility: visible;
                 z-index: 1;
