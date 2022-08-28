@@ -88,9 +88,20 @@ export const Container = styled.div`
         div.main {
             flex: 1;
             padding: 10px 15px;
+            width: 100%;
 
             div.content-products {
                 overflow-y: scroll;
+
+                .empty {
+                    font-family: ${fonts.font_1};
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 22px;
+                    line-height: 24px;
+                    color: ${colors.sub_grey};
+                    margin-bottom: 8px;
+                }
             }
         }
 

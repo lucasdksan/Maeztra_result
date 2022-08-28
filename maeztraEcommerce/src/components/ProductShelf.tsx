@@ -11,8 +11,10 @@ const ProductShelf = ({ colors, descripton, name, path, value, link }:ProductPro
     const [ colorSelected, setColorSelected ] = useState("");
 
     function BuyElement(){
-        ProductUp();
-        SetProductsListAdd({name, value, image: path, color:colorSelected});
+        if(colorSelected !== ""){
+            ProductUp();
+            SetProductsListAdd({name, value, image: path, color:colorSelected});
+        }
     }
 
     return(
